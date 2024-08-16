@@ -11,7 +11,7 @@ import CardsPage from '../CardsPage';
 import PreviousChats from '../PreviousChats';
 import backgroundImage from '../../public/backgroundImage.png'
 
-function MainSection({ containerClassName, pdfpage, chatPage }) {
+function MainSection({ containerClassName, pdfpage, chatPage, isSidebarExtended }) {
   const dispatch = useDispatch();
   const fileInputRef = React.useRef(null);
 
@@ -43,10 +43,11 @@ function MainSection({ containerClassName, pdfpage, chatPage }) {
                   padding: "20px 20px 0px 30px",
                   backgroundImage: `url(${backgroundImage})`,
                   backgroundSize: "cover",
+                  
                }}>
       <ChatContainer renderMessageContent={renderMessageContent} chatPage={chatPage} />
       {!chatPage && <BasicCard fileInputRef={fileInputRef}/>}
-      <InputContainer pdfpage={pdfpage} fileInputRef={fileInputRef}/>
+      <InputContainer pdfpage={pdfpage} fileInputRef={fileInputRef} isSidebarExtended={isSidebarExtended}/>
       {/* {!chatPage && <CardsPage />} */}
       {!chatPage && <Footer />}
       {!chatPage && <PreviousChats/>}

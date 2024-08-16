@@ -67,7 +67,7 @@ export default function BasicCard({fileInputRef}) {
                         alignSelf: "center"
                         }}>
                           
-         <Paper elevation={3} sx={{height: "30vh", 
+         <Paper elevation={3} sx={{height: "35vh", 
                                    width: "70%", 
                                    marginTop: "50px", 
                                    backgroundColor: "#b9d6ff", 
@@ -80,7 +80,7 @@ export default function BasicCard({fileInputRef}) {
                                    alignSelf: "center"
                                    }}>            
          <Paper elevation={2} sx={{width: "95%", height: "80%"}}> 
-          <Box sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+          <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", marginTop:"10px"}}>
                 <h1 className="title gradient-title">Equati</h1>
                 <span className="subtitle gradient-subtitle" style={{marginTop: "-2px", fontWeight: 800, fontSize: "22px"}}>AI</span>
                 <span style={{margin: "10px"}}>|</span>

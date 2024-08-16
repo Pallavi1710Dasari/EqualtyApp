@@ -20,7 +20,9 @@ function ChatContainer({ renderMessageContent, chatPage }) {
     <div id="chat-container" style={{
       backgroundImage: `url(${backgroundImage})`,
       backgroundSize: "cover",
-      display: !chatPage && "none"
+      display: !chatPage && "none",
+      height:"60vh",
+      overflow:"hidden",
     }}>
       {chats[currentChatIndex]?.messages.map((message, index) => (
         <div key={index} className={`message ${message.role}`}>

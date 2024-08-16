@@ -2,19 +2,22 @@
   #input-container {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 78vw;
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;
     align-self: flex-end;
-    margin: 10px 0px 10px 0px;
+    margin: 10px 10px 10px 10px;
+    border-color: orange;
+    border-width: 2px;
+    border-style: solid;
   }
-  
+
   #user-input {
     flex-grow: 1;
     padding: 10px;
-    font-size: 16px;
+    font-size: 15px;
     border: none;
     outline: none;
   }
@@ -32,11 +35,11 @@
   
   #send-button i, #file-upload-label i {
     font-size: 20px;
-    color: #007BFF;
+    color: rgb(13, 51, 155);
   }
   
   #send-button i:hover, #file-upload-label i:hover {
-    color: #0069d9;
+    color: rgb(13, 51, 155);
   }
   
   #file-upload {

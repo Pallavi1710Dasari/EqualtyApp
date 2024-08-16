@@ -9,7 +9,7 @@ import ModalComponent from '../ModalComponent'
 import { FaFilePdf } from 'react-icons/fa6';
 import "./index.css";
 
-function InputContainer({ pdfpage, fileInputRef }) {
+function InputContainer({ pdfpage, fileInputRef, isSidebarExtended }) {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -73,7 +73,7 @@ function InputContainer({ pdfpage, fileInputRef }) {
   };
 
   return (
-    <div id="input-container">
+    <div id="input-container" style={{width: isSidebarExtended ? "67vw" : "78vw", margin:"20px",}}>
       <input
         type="text"
         id="user-input"

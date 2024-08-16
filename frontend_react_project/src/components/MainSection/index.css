@@ -5,13 +5,14 @@
   align-items: center;
   justify-content:center;
   /* Adjust the width */
-  width: 90%; /* Make it take the full width available */
+  width: 100%; /* Make it take the full width available */
   max-width: 1200px; /* Set a max-width to maintain readability on larger screens */
   padding: 12px;
   background-color: #000000;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+
 }
 
 h1 {
