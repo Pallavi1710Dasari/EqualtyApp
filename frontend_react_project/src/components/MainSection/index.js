@@ -39,7 +39,7 @@ function MainSection({ containerClassName, pdfpage, chatPage, isExpanded, setPre
   return (
     <div className={containerClassName} 
          style={{
-                  height: chatPage ? "82vh" : "88vh", 
+                  height: chatPage ? "86vh" : "90vh", 
                   padding: "20px 20px 0px 30px",
                   // alignSelf: "center",
                   // display: "flex",

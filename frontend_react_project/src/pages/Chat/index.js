@@ -18,8 +18,15 @@ function Chat() {
 
     return(
         <div className='chat-con'>
-            <SideBar previousChatOpen={previousChatOpen} setPreviousChatOpen={setPreviousChatOpen} sideClassName={sideClassName} onChangesidebar={onChangesidebar} isExpanded={isExpanded} />
-            <MainSection previousChatOpen={previousChatOpen} setPreviousChatOpen={setPreviousChatOpen} containerClassName={containerClassName} chatPage/>
+            <SideBar previousChatOpen={previousChatOpen}
+             setPreviousChatOpen={setPreviousChatOpen}
+              sideClassName={sideClassName}
+               onChangesidebar={onChangesidebar}
+                isExpanded={isExpanded} />
+            <MainSection previousChatOpen={previousChatOpen}
+             setPreviousChatOpen={setPreviousChatOpen}
+              containerClassName={containerClassName} 
+              chatPage isExpanded={isExpanded}/>
         </div>
     )
 }

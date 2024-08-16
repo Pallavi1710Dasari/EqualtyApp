@@ -4,7 +4,7 @@ h1 {
 
 #chat-container {
   width: 100%; /* Ensure the chat container takes the full width of its parent */
-  height: 70vh; /* Keep the height consistent */
+  height: 80vh; /* Keep the height consistent */
   background-color: transparent;
   border-width: 0px;
   border-radius: 8px;

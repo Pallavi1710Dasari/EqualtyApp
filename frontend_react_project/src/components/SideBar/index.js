@@ -88,6 +88,10 @@ const SideBar = ({ isExpanded, onChangesidebar, sideClassName, setPreviousChatOp
               <RiChatHistoryLine className="nav-item-mobile-link" />
               {isExpanded && <p className="sidebar-description">Chat History</p>}
             </div>
+            <div className="sidebar-item">
+              <BsPersonWorkspace className="nav-item-mobile-link" />
+              {isExpanded && <p className="sidebar-description">Workspace</p>}
+            </div>
           </div>
         </div>
         <div className="sidebar-item last-item" onClick={onClickLogin}>
