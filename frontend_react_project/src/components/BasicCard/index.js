@@ -18,8 +18,7 @@ import "./index.css"
 
 
 
-export default function BasicCard({fileInputRef}) {
-  const [previousChatOpen, setPreviousChatOpen] = React.useState(false)
+export default function BasicCard({fileInputRef, isExpanded, previousChatOpen, setPreviousChatOpen}) {
 
 
   const dispatch = useDispatch();
@@ -67,7 +66,7 @@ export default function BasicCard({fileInputRef}) {
                         alignSelf: "center"
                         }}>
                           
-         <Paper elevation={3} sx={{height: "35vh", 
+         <Paper elevation={3} sx={{height: "30vh", 
                                    width: "70%", 
                                    marginTop: "50px", 
                                    backgroundColor: "#b9d6ff", 
@@ -80,22 +79,22 @@ export default function BasicCard({fileInputRef}) {
                                    alignSelf: "center"
                                    }}>            
          <Paper elevation={2} sx={{width: "95%", height: "80%"}}> 
-          <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", marginTop:"10px"}}>
+          <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", marginTop: "10px"}}>
                 <h1 className="title gradient-title">Equati</h1>
                 <span className="subtitle gradient-subtitle" style={{marginTop: "-2px", fontWeight: 800, fontSize: "22px"}}>AI</span>
                 <span style={{margin: "10px"}}>|</span>
                 <span className="description" style={{color: "#4557f3", fontWeight: 500}}>Simplifying math, one equation at a time</span>
             </Box>                                 
           <CardActions sx={{display: "flex", justifyContent: "center", margin: "20px"}}>
-            <Button size="big" variant='contained' color='warning' onClick={onUploadFileClick}>
+            <Button size={isExpanded ? "small" : "big"} variant='contained' color='warning' onClick={onUploadFileClick}>
               <FiUpload style={{fontSize: "20px", fontWeight: 500, marginRight: "5px"}}/>
               Upload File
             </Button>
-            <Button size="big" variant='contained' color='warning' onClick={onClickPreviousChats}>
+            <Button size={isExpanded ? "small" : "big"} variant='contained' color='warning' onClick={onClickPreviousChats}>
               <TiArrowBackOutline style={{fontSize: "20px", fontWeight: 500, marginRight: "5px"}}/>
               Previous Chats
             </Button>
-            <Button size="big" variant='contained' color='warning' onClick={onAddNewChat}>
+            <Button size={isExpanded ? "small" : "big"} variant='contained' color='warning' onClick={onAddNewChat}>
               <MdOutlinePostAdd style={{fontSize: "20px", fontWeight: 500, marginRight: "5px"}}/>
               Start New Chat
             </Button>

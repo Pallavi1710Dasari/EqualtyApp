@@ -8,28 +8,26 @@ function ChatContainer({ renderMessageContent, chatPage }) {
   const { chats, currentChatIndex, loading } = useSelector((state) => state.chat);
   const chatEndRef = useRef(null);
 
-  const scrollToBottom = () => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+  // const scrollToBottom = () => {
+  //   chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  // };
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [chats[currentChatIndex]?.messages, loading]);
+  // useEffect(() => {
+  //   scrollToBottom();
+  // }, [chats[currentChatIndex]?.messages]);
 
   return (
     <div id="chat-container" style={{
-      backgroundImage: `url(${backgroundImage})`,
+      // backgroundImage: `url(${backgroundImage})`,
       backgroundSize: "cover",
-      display: !chatPage && "none",
-      height:"60vh",
-      overflow:"hidden",
+      display: !chatPage && "none"
     }}>
       {chats[currentChatIndex]?.messages.map((message, index) => (
         <div key={index} className={`message ${message.role}`}>
           {renderMessageContent(message.content)}
         </div>
       ))}
-      {loading && (
+      {loading === true && (
         <div className="message-assistant">
           <ReactLoading type="bubbles" color="#000" height={24} width={24} />
         </div>
@@ -40,4 +38,3 @@ function ChatContainer({ renderMessageContent, chatPage }) {
 }
 
 export default ChatContainer;
-
