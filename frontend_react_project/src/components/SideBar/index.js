@@ -57,7 +57,7 @@ const SideBar = ({ isExpanded, onChangesidebar, sideClassName, setPreviousChatOp
               {isExpanded && <p className="sidebar-description">Chat History</p>}
             </div>
             <div className="sidebar-item" onClick={onIconClick}>
-              <FaUserCircle size={30} onClick={toggleModal} style={{ cursor: 'pointer' }} />
+              <AiOutlineAppstore size={30} onClick={toggleModal} style={{ cursor: 'pointer' }} />
               {isExpanded && <p className="sidebar-description">Plans</p>}
               {isModalOpen && <Modal isOpen={isModalOpen} onClose={toggleModal} />}
               {/* {isModalOpen && <Modal closeModal={closeModal} />} */}

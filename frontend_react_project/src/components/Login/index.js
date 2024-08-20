@@ -1,67 +1,49 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import './index.css'; // Add your styles here
+import { FaGoogle } from 'react-icons/fa';
+import './index.css'; // Import your styles
 
 const Login = () => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
-  const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleLogin = (e) => {
     e.preventDefault();
-
-    try {
-      // Replace the URL with your backend authentication endpoint
-      const response = await axios.post('http://127.0.0.1:5000/api/login', {
-        email,
-        password,
-      });
-
-      if (response.data.success) {
-        // Assuming the response contains a token or user data
-        const token = response.data.token;
-        // Save the token in local storage or context
-        localStorage.setItem('authToken', token);
-
-        // Navigate to the home page after successful login
-        navigate('/');
-      } else {
-        setError('Invalid credentials, please try again.');
-      }
-    } catch (err) {
-      setError('An error occurred during login, please try again later.');
-    }
+    // Handle your login logic here
   };
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      {error && <p className="error-message">{error}</p>}
+    <div className="login-modal">
+      <div className="login-header">
+        <img src="popai-logo.png" alt="PopAI Logo" className="logo" />
+        <h2>Your Personal AI Workspace</h2>
+      </div>
+      <p className="login-message">
+        Log in to get the latest AI models and smarter responses
+      </p>
       <form onSubmit={handleLogin} className="login-form">
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit" className="login-button">Login</button>
+        <input
+          type="email"
+          placeholder="Email address"
+          value={email}
+          onChange={handleEmailChange}
+          required
+          className="email-input"
+        />
+        <button type="submit" className="next-button">Next</button>
       </form>
+      <div className="or-separator">or</div>
+      <button className="google-login-button">
+        <FaGoogle className="google-icon" />
+        Continue with Google
+      </button>
+      <div className="terms-and-privacy">
+        By continuing, you are agreeing to our{' '}
+        <a href="/terms">Terms of Service</a> &amp;{' '}
+        <a href="/privacy">Privacy Policy</a>.
+      </div>
     </div>
   );
 };
